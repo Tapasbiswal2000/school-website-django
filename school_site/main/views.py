@@ -4,7 +4,10 @@ from .models import Gallery
 from .models import Contact
 
 def home(request):
-    return render(request, 'home.html')
+
+    notices = Notice.objects.all().order_by('-id')[:3]
+
+    return render(request, 'home.html', {'notices': notices})
 
 def about(request):
     return render(request, 'about.html')

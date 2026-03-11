@@ -2,11 +2,46 @@
 
 {% block content %}
 
-<div class="p-5 mb-4 bg-light rounded-3">
+<div class="container mt-5">
 
-<h1>Bright Future Public School</h1>
+<!-- HERO SECTION -->
 
-<p>Empowering students for a brighter tomorrow.</p>
+<div class="p-5 mb-4 bg-light rounded">
+
+<h1>Welcome to Bright Future School</h1>
+
+<p>Providing quality education for a brighter tomorrow.</p>
+
+</div>
+
+
+<!-- NOTICES -->
+
+<h2 class="mb-4">Latest Notices</h2>
+
+<div class="row">
+
+{% for notice in notices %}
+
+<div class="col-md-4">
+
+<div class="card mb-3">
+
+<div class="card-body">
+
+<h5 class="card-title">{{ notice.title }}</h5>
+
+<p class="card-text">{{ notice.description }}</p>
+
+</div>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
 
 </div>
 
