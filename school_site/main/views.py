@@ -1,13 +1,18 @@
 from django.shortcuts import render
-from .models import Notice
-from .models import Gallery
-from .models import Contact
+from .models import Notice,Principal,Contact,Gallery
+
 
 def home(request):
 
     notices = Notice.objects.all().order_by('-id')[:3]
+    principal = Principal.objects.first()
 
-    return render(request, 'home.html', {'notices': notices})
+    context = {
+        'notices': notices,
+        'principal': principal
+    }
+
+    return render(request, 'home.html', context)
 
 def about(request):
     return render(request, 'about.html')
