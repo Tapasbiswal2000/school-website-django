@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>School Gallery</h1>
+
+<div class="row">
+
+{% for img in images %}
+
+<div class="col-md-4">
+
+<img src="{{ img.image.url }}" class="img-fluid">
+
+<p>{{ img.caption }}</p>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

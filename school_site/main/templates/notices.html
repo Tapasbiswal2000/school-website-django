@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>School Notices</h1>
+
+{% for notice in notices %}
+
+<div class="card mb-3">
+
+<div class="card-body">
+
+<h5>{{ notice.title }}</h5>
+
+<p>{{ notice.description }}</p>
+
+<small>{{ notice.date }}</small>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}

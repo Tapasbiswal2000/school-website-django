@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Bright Future Public School</title>
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<div class="container">
+
+<a class="navbar-brand" href="/">School</a>
+
+<div>
+
+<a class="nav-link text-white" href="/">Home</a>
+<a class="nav-link text-white" href="/about">About</a>
+<a class="nav-link text-white" href="/notices">Notices</a>
+<a class="nav-link text-white" href="/gallery">Gallery</a>
+<a class="nav-link text-white" href="/contact">Contact</a>
+
+</div>
+
+</div>
+</nav>
+
+<div class="container mt-4">
+
+{% block content %}
+
+{% endblock %}
+
+</div>
+<footer class="bg-dark text-white text-center p-3 mt-5">
+
+<p>© 2026 Bright Future Public School</p>
+
+</footer>
+
+</body>
+</html>
