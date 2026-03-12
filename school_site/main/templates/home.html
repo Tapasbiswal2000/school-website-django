@@ -2,70 +2,68 @@
 
 {% block content %}
 
-<div class="container mt-5">
-
 <!-- HERO SECTION -->
-
-<div class="p-5 mb-4 bg-light rounded">
-
+<section class="bg-primary text-white text-center p-5">
+<div class="container">
 <h1>Welcome to Bright Future School</h1>
-
-<p>Providing quality education for a brighter tomorrow.</p>
-
+<p class="lead">Building Future Leaders Through Education</p>
 </div>
+</section>
 
+<!-- ABOUT SECTION -->
+<section class="container my-5">
+<h2 class="text-center mb-4">About Our School</h2>
+<p class="text-center">
+Our school focuses on academic excellence, creativity, and leadership.
+We provide students with a safe environment to grow and succeed.
+</p>
+</section>
 
-<!-- NOTICES -->
-
-<h2 class="mb-4">Latest Notices</h2>
+<!-- LATEST NOTICES -->
+<section class="container my-5">
+<h2 class="text-center mb-4">Latest Notices</h2>
 
 <div class="row">
 
 {% for notice in notices %}
 
 <div class="col-md-4">
-
-<div class="card mb-3">
-
+<div class="card shadow-sm mb-4">
 <div class="card-body">
 
-<h5 class="card-title">{{ notice.title }}</h5>
-
-<p class="card-text">{{ notice.description }}</p>
-
-</div>
+<h5>{{ notice.title }}</h5>
+<p>{{ notice.description }}</p>
+<small>{{ notice.date }}</small>
 
 </div>
-
+</div>
 </div>
 
 {% endfor %}
-<!-- PRINCIPAL MESSAGE -->
-
-<div class="container mt-5">
-
-<h2>Principal's Message</h2>
-
-<div class="row align-items-center">
-
-<div class="col-md-4">
-<img src="{{ principal.photo.url }}" class="img-fluid rounded">
-</div>
-
-<div class="col-md-8">
-
-<h4>{{ principal.name }}</h4>
-
-<p>{{ principal.message }}</p>
 
 </div>
+</section>
 
+<!-- GALLERY PREVIEW -->
+<section class="container my-5">
+<h2 class="text-center mb-4">Gallery</h2>
+
+<div class="row">
+
+{% for image in images|slice:":4" %}
+
+<div class="col-md-3 mb-3">
+<img src="{{ image.image.url }}" class="img-fluid rounded shadow">
 </div>
+
+{% endfor %}
 
 </div>
 
+<div class="text-center mt-3">
+<a href="/gallery/" class="btn btn-primary">View Full Gallery</a>
 </div>
 
-</div>
+</section>
 
 {% endblock %}

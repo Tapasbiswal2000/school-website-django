@@ -4,15 +4,13 @@ from .models import Notice,Principal,Contact,Gallery
 
 def home(request):
 
-    notices = Notice.objects.all().order_by('-id')[:3]
-    principal = Principal.objects.first()
+    notices = Notice.objects.all().order_by("-date")[:6]
+    images = Gallery.objects.all()
 
-    context = {
-        'notices': notices,
-        'principal': principal
-    }
-
-    return render(request, 'home.html', context)
+    return render(request, "home.html", {
+        "notices": notices,
+        "images": images
+    })
 
 def about(request):
     return render(request, 'about.html')
